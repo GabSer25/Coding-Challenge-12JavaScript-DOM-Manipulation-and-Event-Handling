@@ -87,3 +87,36 @@ function addInventoryItem(itemName) {
     // Insert the new item into the inventory list
     inventoryList.appendChild(newItem);
 }
+
+// Task 4 - Business Customer Section - Handling Event Bubbling
+    
+// Function to handle customer card click event
+function handleCustomerCardClick(event) {
+    console.log("Customer card clicked"); // Log message
+
+    event.stopPropagation(); // Stop event from bubbling to parent container
+}
+
+// Function to handle customer section click event
+function handleCustomerSectionClick() {
+    console.log("Customer section clicked"); // Log message
+}
+
+// Selecting the parent customer section
+var customerSection = document.getElementById("customerSection");
+
+// Adding an event listener to the parent container
+customerSection.addEventListener("click", handleCustomerSectionClick);
+
+// Creating customer cards dynamically (as an example)
+for (var i = 1; i <= 3; i++) {
+    var customerCard = document.createElement("div");
+    customerCard.setAttribute("class", "customer-card");
+    customerCard.textContent = "Customer " + i;
+
+    // Adding event listener to customer card
+    customerCard.addEventListener("click", handleCustomerCardClick);
+
+    // Appending customer card to the customer section
+    customerSection.appendChild(customerCard);
+} 
