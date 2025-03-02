@@ -15,7 +15,9 @@
             margin: 10px;
             background-color: lightgray;
             border-radius: 5px;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .product-item {
             cursor: pointer;
@@ -44,7 +46,8 @@
     <!-- Inventory List Section -->
     <h2>Inventory List</h2>
     <ul id="inventoryList"></ul>
-    <button onclick="addProduct">Add Product</button>
+    <button onclick="addInventoryItem('Laptop')">Add Laptop</button>
+    <button onclick="addInventoryItem('Smartphone')">Add Smartphone</button>
     
     <!-- Customer Section -->
     <h2>Customer Section</h2>
